@@ -21,5 +21,5 @@ Methods:
 `.refresh()` to recalculate the scrollbar properties incase of height change
 `.onScroll(function)` to be executed while scrolling 
 
-**[Demo on Codepen](http://codepen.io/akshay-7/pen/Wxrgrw)**
+**[Demo on Codepen](http://codepen.io/akshay-7/pen/LkAEvQ)**
 
