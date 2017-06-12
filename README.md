@@ -44,8 +44,11 @@ customScroll.setStyle({
 Properties
 
 `.scrollBar` the scrollbar element
+
 `.scrollBarHolder` the scrollbar holder element
+
 `.scrollElement` the element which scrolls. Refer this element to other plugins that use the scroll function. ie this element will show the `scrollTop` position. In the demo [ScrollReveal](https://github.com/jlmakes/scrollreveal) is used.
+
 `.scrollSpeed` speed at which element scrolls when clicked on the scrollbar holder. default 200ms
 
 
