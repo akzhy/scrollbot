@@ -1,5 +1,5 @@
 # scrollbot 
-Custom scrollbar using pure javascript
+Custom scrollbar using pure javascript [Demo](https://akzhy.github.io/scrollbot/)
 
 scrollbot doesn't use `mousewheel` to create the scrolling effect, instead it hides the natural scrollbar. So properties like `scrollTop` can be used on the `scrollElement`. Other plugins that uses the scroll function can also be used with scrollbot. 
 
