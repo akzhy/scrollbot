@@ -1,284 +1,240 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="scrollbot.js" type="text/javascript"></script>
+	<script src="../src/scrollbot.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Cookie|Pacifico" rel="stylesheet">
+	<script  src="files/scrollreveal.min.js" type="text/javascript"></script>
 	<style>
-		body{
-			background:#eee;
-			text-align:center;
-		}
-
-		.scrollbot{
-			width:400px;
-			height:250px;
-			box-shadow:1px 1px 6px -2px #000;
-			margin:10px;
-			display:inline-block;
-			vertical-align:top;
-			padding:3px 5px;
-			background:#fff;
-			text-align:left;
-		}
-
-		.scrollbot h1{
-			padding:0;
+		*{
 			margin:0;
+			padding:0;
+		}
+		html,body,#wrapper{
+			height:100%;
+			
+		}
+		body{
+			background:#121720;
+			/* Pattern from https://www.toptal.com/designers/subtlepatterns/ */
+			background:url("files/bg.png");
+			font-family:"Cookie",cursive;
 			text-align:center;
 		}
+
+		h1,h2,h3{
+			font-family:"Pacifico",cursive;
+			font-weight:bold;
+			position:relative;
+		}
+
+		h1:after,h2:after,h3:after{
+			position:absolute;
+			content:"";
+			width:100%;
+			height:2px;
+			background:#202020;
+			bottom:0;
+			left:0;
+		}
+
+		a{
+			text-decoration:none;
+			color:#2196f3;
+		}
+
+		p{
+			font-size:1.5em;
+			margin:10px 0;
+			line-height:1.3em;
+		}
+
+		.scrolls{
+			padding:20px;
+		}
+
+		.title{
+			font-size:3em;
+			text-align:left;
+			padding:5px 20px;
+		}
+
+		.title a{
+			color:#f44336;
+		}
+
+		.custom-scroll{
+			width:500px;
+			height:500px;
+			padding:20px;
+			text-align:left;
+			background:#fff;
+			margin:25px;
+			display:inline-block;
+			overflow:auto;
+		}
+
+		.custom-scroll img{
+			width:100%;
+		}
+
+		.btn{
+			display:inline-block;
+			padding:10px;
+			border:1px solid #333;
+			font-size:2em;
+			margin:1em;
+			cursor:pointer;
+		}
+
 	</style>
 </head>
 <body>
-	<div class="scrollbot" id="normal">
-		<h1>Normal</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="width">
-		<h1>Scrollbar Width</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="styled">
-		<h1>Styled Scrollbar</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="height">
-		<h1>Scrollbar with custom height</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="onscroll">
-		<h1>On Scroll</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="scrollbaronly">
-		<h1>Scrollbar Only!!</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="refresh">
-		<h1>Refresh</h1>
-		<p id="r">Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-		</p>
-	</div>
-	<div class="scrollbot" id="style1">
-		<h1>Scrollbar Style</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="style2">
-		<h1>Scrollbar Style</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="style3">
-		<h1>Scrollbar Style</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="style4">
-		<h1>Scrollbar Style</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
-	</div>
-	<div class="scrollbot" id="style5">
-		<h1>Scrollbar Style</h1>
-		<p>Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.
-
- Reque convenire moderatius sea et, aliquid corpora postulant duo ne. Stet virtute eum et, et eos illum nostro audiam, sed soleat mnesarchum id. Ferri viderer nostrud mel no. His clita complectitur ad. Ne sed odio maluisset reprimique, eius soluta qualisque his ne, id duo iusto munere regione. Vel soleat mnesarchum ex.
-
- Eos urbanitas inciderint cotidieque ex. Duo hinc nibh illum ea, exerci legimus tractatos vim ex, ea congue labore propriae sea. Agam iudico ei pri. His te eleifend postulant, ei duo insolens inimicus constituto.
-
- Pri vide numquam te, cum fabellas platonem ei. Eum nobis adipisci ea, alterum laoreet omittantur pro in, cum an veri blandit mediocritatem. Mel ceteros incorrupte ut, percipit senserit referrentur sed at. Sea quem maiorum corrumpit ut, per nostro inermis in, ei causae fabellas lucilius sea. Facete intellegat id mel, an eos modo partem fierent.
-
- Eam affert possit aliquid ei, ad homero impetus eam, choro impedit delectus at ius. Has ipsum dicam partem eu. Cu assentior voluptatibus pro, et mei prima iriure dissentiunt. Ex justo constituam eos, nec id modus consul euripidis, mea mundi debitis invenire ad.
-
- Adipisci efficiendi no mea, sit oblique blandit adolescens no, ut vis natum affert. Harum prompta torquatos ad vis, eos omnes decore ex, sit discere sententiae ea. Porro nominavi eloquentiam no duo, pro cu minim congue, natum theophrastus ei vim. Id posse volumus mel, duo inani utroque no, ad luptatum principes mea. Per te quod vocent, inermis accusata deseruisse cu eum.
-		</p>
+	<div id="wrapper">
+		<div class="header">
+			<h1 class="title"><a href="#">Scrollbot</a></h1>
+		</div>
+		<div class="scrolls">
+			<div class="custom-scroll custom-scroll-1">
+				<h1>Default Style</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+				<img src="https://unsplash.it/300?image=0" alt="image"/>
+				<p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+				<img src="https://unsplash.it/300?image=2" alt="image"/>
+				<p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus. Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+				<img src="https://unsplash.it/300?image=3" alt="image"/>
+				<p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+				<img src="https://unsplash.it/300?image=4" alt="image"/>
+				<p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+			</div>
+			<div class="custom-scroll custom-scroll-2">
+				<h1>Custom Style 1</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+				<img src="https://unsplash.it/300?image=12" alt="image"/>
+				<p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+				<img src="https://unsplash.it/300?image=50" alt="image"/>
+				<p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus. Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+				<img src="https://unsplash.it/300?image=34" alt="image"/>
+				<p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+				<img src="https://unsplash.it/300?image=68" alt="image"/>
+				<p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+			</div>
+			<div class="custom-scroll custom-scroll-3">
+				<h1>Custom Style 2</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+				<img src="https://unsplash.it/300?image=0" alt="image"/>
+				<p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+				<img src="https://unsplash.it/300?image=2" alt="image"/>
+				<p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus. Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+				<img src="https://unsplash.it/300?image=3" alt="image"/>
+				<p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+				<img src="https://unsplash.it/300?image=4" alt="image"/>
+				<p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+			</div>
+			<div class="custom-scroll custom-scroll-4">
+				<h1>Custom Style 3</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+				<img src="https://unsplash.it/300?image=1" alt="image"/>
+				<p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+				<img src="https://unsplash.it/300?image=50" alt="image"/>
+				<p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus. Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+				<img src="https://unsplash.it/300?image=34" alt="image"/>
+				<p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+				<img src="https://unsplash.it/300?image=68" alt="image"/>
+				<p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+			</div>
+			<div class="custom-scroll custom-scroll-5">
+				<h1><a href="https://github.com/jlmakes/scrollreveal">Scrollreveal</a> animations</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+				<img src="https://unsplash.it/300?image=0" alt="image"/>
+				<p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+				<img src="https://unsplash.it/300?image=2" alt="image"/>
+				<p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus. Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+				<img src="https://unsplash.it/300?image=3" alt="image"/>
+				<p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+				<img src="https://unsplash.it/300?image=4" alt="image"/>
+				<p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+			</div>
+			<div class="custom-scroll custom-scroll-6">
+				<h1>Custom Style 6</h1>
+				<span class="btn" id="destroy">Click here to Destroy me</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+				<img src="https://unsplash.it/300?image=12" alt="image"/>
+				<p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+				<img src="https://unsplash.it/300?image=50" alt="image"/>
+				<p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus. Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+				<img src="https://unsplash.it/300?image=34" alt="image"/>
+				<p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+				<img src="https://unsplash.it/300?image=68" alt="image"/>
+				<p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+			</div>
+		</div>
 	</div>
 	<script>
-		var normal = new scrollbot("#normal");
 
-		var width = new scrollbot("#width",5);
+		var customScrolls = [];
 
-		var styled = new scrollbot("#styled").setStyle({
-			"border-radius":0,
-			"background-color":"#ff5722"
+		var custom1 = new scrollbot(".custom-scroll-1");
+
+		custom2 = new scrollbot(".custom-scroll-2",10).setStyle({
+			"background":"#202020",
+			"z-index":"2"
 		},{
-			"border-radius":0,
-			"background-color":"#ff9800"
-		})
-		var height = new scrollbot("#height",10).setStyle({height:10,"border-radius":"50%"})
+			"background":"rgba(0,0,0,0)"
+		});
+		var psuedo = document.createElement("div");
+		psuedo.style.cssText = "height:100%;width:2px;left:4px;background:#808080;position:absolute;z-index:1";
+		custom2.scrollBarHolder.appendChild(psuedo);
+		
 
+		var custom3 = new scrollbot(".custom-scroll-3");
+		custom3.setStyle({height:2});
 		var onscrollfollower = document.createElement("div");
 		onscrollfollower.style.width = "100%";
 		onscrollfollower.style.height = "100%";
-		onscrollfollower.style.backgroundColor = "#00CCFF";
+		onscrollfollower.style.backgroundColor = "#222222";
 		onscrollfollower.style.position = "absolute";
 		onscrollfollower.style.bottom = "100%";
 		onscrollfollower.style.right = 0;
-		var onscroll = new scrollbot("#onscroll",8);
-		onscroll.setStyle({"background-color":"crimson",height:2});
-		onscroll.scrollBarHolder.scrollBarHolder.appendChild(onscrollfollower);
-		onscroll.onScroll(function(){onscrollfollower.style.bottom = 100 - parseFloat(this.scrollBar.top) + "%";})
-	
-		var scrollbaronly = new scrollbot("#scrollbaronly",8).setStyle({
-			background:"linear-gradient(black,grey,black)"
-		},{
-			background:"transparent"
-		})
+		custom3.scrollBarHolder.appendChild(onscrollfollower);
+		custom3.onScroll(function(){onscrollfollower.style.bottom = 100 - parseFloat(this.scrollBar.style.top) + "%";})
 
-		var refresh = new scrollbot("#refresh",10);
-		var p = document.getElementById("r");
-		var interval = setInterval(function(){
-			p.innerHTML+="Lorem ipsum dolor sit amet, saperet recteque gubergren sed ne, cum cu elit definitionem. Eu iudico inimicus conceptam eam, quo nulla oblique contentiones ex. Mel ne animal detraxit praesent, cu pri natum deserunt, molestie constituam vix an. Vis choro corrumpit an.";
-			refresh.refresh();
-		},1000);
-		setTimeout(function(){
-			clearInterval(interval);
-		},5000);
-
-		var style1 = new scrollbot("#style1").setStyle({
-			"border-radius":0,
-			"background":"#000"
-		},{
-			"border-radius":0,
-			border:"2px solid #000",
-			background:"#fff"
-		})
-
-		var style2 = new scrollbot("#style2").setStyle({
-			"background":"transparent",
-			"box-shadow":"inset 0 0 5px 2px darkblue"
-		},{
-			"background":"transparent",
-			"box-shadow":"inset 0 0 10px 0 darkblue"
-		})
-
-		var style3 = new scrollbot("#style3").setStyle({
-			"background":"linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 50%,#7db9e8 100%)",
-		},{
-			"background":"transparent",
-			"box-shadow":"inset 0 0 10px 0 grey"
-		})
-
-		var style4 = new scrollbot("#style4").setStyle({
-			"background":"linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%)",
-		},{
-			"background":"transparent",
-			"box-shadow":"inset 0 0 10px 0 grey"
-		})
-
-		var style5 = new scrollbot("#style5",20).setStyle({
-			"height":20,
+		custom4 = new scrollbot(".custom-scroll-4",10).setStyle({
+			"background":"#202020",
+			"z-index":"2",
 			"border-radius":"50%",
-			"background":"radial-gradient(ellipse at center, #1e5799 0%,#207cca 51%,#2989d8 52%,#2989d8 52%,#7db9e8 100%)",
+			"height":"10px"
 		},{
-			"background":"transparent",
-			"box-shadow":"inset 0 0 10px 0 grey"
-		})
+			"background":"rgba(0,0,0,0)"
+		});
+		var psuedo = document.createElement("div");
+		psuedo.style.cssText = "height:100%;width:2px;left:4px;background:#808080;position:absolute;z-index:1";
+		custom4.scrollBarHolder.appendChild(psuedo);
+
+		var custom5 = new scrollbot(".custom-scroll-5");
+
+		window.sr = ScrollReveal({
+			container:custom5.scrollElement
+		});
+
+		sr.reveal("p,img",{duration:1000})
+
+		var custom6 = new scrollbot(".custom-scroll-6");
+
+		document.querySelector("#destroy").onclick = function(){
+			custom6.destroy();
+		}
+		
+
+		document.onreadystatechange = function(){
+			custom1.refresh();
+			custom2.refresh();
+			custom3.refresh();
+			custom4.refresh();
+			custom5.refresh();
+			custom6.refresh();
+		}
+
+			
 	</script>
 	
 </body>
