@@ -56,7 +56,7 @@ customScroll.setStyle({
 
 ## Demo and Webpage
 
-**[Demo](http://demos.akzhy.com/custom-scrollbar/demo/)** | **[Webpage](http://www.akzhy.com/shelf/scrollbot/)**
+**[Demo](http://demos.akzhy.com/scrollbot/demo/)** | **[Webpage](http://www.akzhy.com/shelf/scrollbot/)**
 
 ## Contact
 If you have any suggestions/improvements or find an issue, you can
