@@ -19,6 +19,7 @@ var customScroll = new Scrollbot(element,width)
 
 ## Methods:
 
+
 `.setStyle(scrollbar,scrollbarholder)` where `scrollbar`(object) is used to style the scrollbar and `scrollbarholder`(object) is used to style the scrollbar holder.
 
 Eg:
@@ -41,7 +42,9 @@ customScroll.setStyle({
 
 `.destroy()` to remove all custom scroll properties and show the original default scroll bar.
 
+
 ## Properties
+
 
 `.scrollBar` the scrollbar element
 
@@ -60,6 +63,7 @@ If you have any suggestions/improvements or find an issue, you can
 - Raise an issue
 - [Contact Me](http://www.akzhy.com/contact)
 - [Comment on webpage](http://www.akzhy.com/shelf/scrollbot/)
+
 
 
 
