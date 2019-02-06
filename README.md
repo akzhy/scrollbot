@@ -1,5 +1,5 @@
 # Scrollbot 
-Custom scrollbar using pure javascript [Demo](https://akzhy.github.io/scrollbot/)
+Custom scrollbar using pure javascript.
 
 scrollbot doesn't use `mousewheel` to create the scrolling effect, instead it hides the natural scrollbar. So properties like `scrollTop` can be used on the `scrollElement`. Other plugins that uses the scroll function can also be used with scrollbot. 
 
@@ -17,7 +17,8 @@ var customScroll = new Scrollbot(element,width)
 ```
 `element` is the element to be selected and width is the `width` of the scrollbar
 
-##Methods:
+## Methods:
+
 
 `.setStyle(scrollbar,scrollbarholder)` where `scrollbar`(object) is used to style the scrollbar and `scrollbarholder`(object) is used to style the scrollbar holder.
 
@@ -41,7 +42,9 @@ customScroll.setStyle({
 
 `.destroy()` to remove all custom scroll properties and show the original default scroll bar.
 
-##Properties
+
+## Properties
+
 
 `.scrollBar` the scrollbar element
 
@@ -51,7 +54,16 @@ customScroll.setStyle({
 
 `.scrollSpeed` speed at which element scrolls when clicked on the scrollbar holder. default 200ms
 
-##Demo and Webpage
+## Demo and Webpage
+
+**[Demo](http://demos.akzhy.com/custom-scrollbar/demo/)** | **[Webpage](http://www.akzhy.com/shelf/scrollbot/)**
+
+## Contact
+If you have any suggestions/improvements or find an issue, you can
+- Raise an issue
+- [Contact Me](http://www.akzhy.com/contact)
+- [Comment on webpage](http://www.akzhy.com/shelf/scrollbot/)
+
 
 
 
